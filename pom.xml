@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.mcleananalytics</groupId>
-    <artifactId>minimal-jsf-ejb-jpa</artifactId>
+    <artifactId>minimal-pf-ejb-jpa</artifactId>
     <version>0.1-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>minimal-jsf-ejb-jpa</name>
+    <name>minimal-pf-ejb-jpa</name>
 
     <dependencies>
         <dependency>
