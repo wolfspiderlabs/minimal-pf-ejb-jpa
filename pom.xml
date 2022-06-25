@@ -60,6 +60,13 @@
             <version>1.4.01</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>11.0.0</version>
+        </dependency>
+        
     </dependencies>
 
     <build>

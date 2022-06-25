@@ -3,7 +3,8 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://java.sun.com/jsf/core"      
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>JSF 2.3 Hello World</title>
     </h:head>
@@ -17,5 +18,8 @@
            <h:outputLabel value="#{testBean.message}"></h:outputLabel>
            <h:commandButton value="Read" action="#{testBean.read}"></h:commandButton>
          </h:form>
+        <h:form>
+            <p:spinner/>
+        </h:form>
     </h:body>
 </html>
