@@ -6,20 +6,19 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>JSF 2.3 Hello World</title>
     </h:head>
     <h:body>
         <h2>JSF 2.3 Hello World Example</h2>
-        <h:form>
-           <h:inputText value="#{testBean.message}"></h:inputText>
-           <h:commandButton value="Write" action="#{testBean.write}"></h:commandButton>
-        </h:form>
-         <h:form>
-           <h:outputLabel value="#{testBean.message}"></h:outputLabel>
-           <h:commandButton value="Read" action="#{testBean.read}"></h:commandButton>
-         </h:form>
-        <h:form>
-            <p:spinner/>
-        </h:form>
+        <div class="card">
+            <h:form>
+                <h5 class="p-mt-0">Basic</h5>
+                <h:panelGrid columns="2" cellpadding="5">
+                    <p:outputLabel for="name" value="Name"/>
+                    <p:inputText id="name" value="#{testBean.text}"/>
+                    <h:outputText id="display" value="#{testBean.text}"/>
+                </h:panelGrid>
+                <p:commandButton value="Submit" update="display" styleClass="p-mt-3" ajax="true" />
+            </h:form>
+        </div>
     </h:body>
 </html>
