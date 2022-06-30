@@ -10,6 +10,15 @@
 
     <name>minimal-pf-ejb-jpa</name>
 
+    <repositories>    
+       <repository>  
+            <id>prime-repo</id>  
+            <name>PrimeFaces Maven Repository</name>  
+            <url>https://repository.primefaces.org</url>  
+            <layout>default</layout>  
+        </repository>  
+    </repositories>
+    
     <dependencies>
         <dependency>
             <groupId>javax</groupId>
@@ -67,6 +76,11 @@
             <version>11.0.0</version>
         </dependency>
         
+        <dependency>
+            <groupId>org.primefaces.themes</groupId>
+            <artifactId>all-themes</artifactId>
+            <version>1.0.10</version>
+        </dependency>
     </dependencies>
 
     <build>
