@@ -1,6 +1,7 @@
 package test.ejb;
 
 import javax.ejb.Stateless;
+import javax.interceptor.Interceptors;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -30,9 +31,14 @@ public class TestEJBBean implements TestEJB {
     }
     
     @Override
-    public void error() throws CustomException
-    {
+    public void error() throws CustomException {
         System.out.println("THROWING");
         throw new CustomException();
+    }
+    
+    @Override
+    @Interceptors(CustomInterceptor.class)
+    public void intercept() throws TestException {
+
     }
 }

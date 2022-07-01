@@ -4,9 +4,11 @@ import java.io.Serializable;
 
 import javax.ejb.EJB;
 import javax.faces.view.ViewScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import test.ejb.TestEJB;
+import test.ejb.TestException;
 import test.jpa.TestEntity;
 
 @Named
@@ -16,6 +18,10 @@ public class TestBean implements Serializable {
     
     @EJB
     private TestEJB testEJB;
+    
+    @Inject
+    SessionBean sessionBean;
+    
     private String text;
 
     public TestBean() {
@@ -52,4 +58,17 @@ public class TestBean implements Serializable {
     {
         testEJB.error();
     }
+    
+    public void user() {
+        sessionBean.setUserId(new Long(15));
+    }
+    
+    public void intercept() throws CustomException
+    {
+        try {
+            testEJB.intercept();
+        } catch (TestException e) {
+            throw new CustomException();
+        }
+    }    
 }
