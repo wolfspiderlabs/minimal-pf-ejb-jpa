@@ -38,7 +38,9 @@ public class TestEJBBean implements TestEJB {
     
     @Override
     @Interceptors(CustomInterceptor.class)
-    public void intercept() throws TestException {
+//    public void intercept() throws TestException {
+    public void intercept() throws CustomException {
+        
 
     }
 }

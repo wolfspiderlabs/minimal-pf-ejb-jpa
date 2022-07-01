@@ -17,6 +17,7 @@
                 <h:form>
                     <h5 class="p-mt-0">Basic</h5>
                     <h:panelGrid columns="2" cellpadding="5">
+                        <h:outputText rendered="#{flash['org.omnifaces.view_expired'] eq true}" value="Session Expired"/>
                         <p:outputLabel for="name" value="Name"/>
                         <p:inputText id="name" value="#{testBean.text}"/>
                         <h:outputText id="display" value="#{testBean.text}"/>

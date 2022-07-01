@@ -65,10 +65,10 @@ public class TestBean implements Serializable {
     
     public void intercept() throws CustomException
     {
-        try {
+       // try {
             testEJB.intercept();
-        } catch (TestException e) {
-            throw new CustomException();
-        }
+        //} catch (TestException e) {
+        //    throw new CustomException();
+        //}
     }    
 }

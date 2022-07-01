@@ -7,5 +7,6 @@ public interface TestEJB {
     public void save(TestEntity obj);
     public TestEntity read();
     public void error() throws CustomException;
-    public void intercept() throws TestException;
+    //public void intercept() throws TestException;
+    public void intercept() throws CustomException;    
 }
