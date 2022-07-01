@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
+<xhtml xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://java.sun.com/jsf/core"      
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
@@ -32,7 +32,7 @@
         <p:commandButton value="Error" action="#{testBean.error}"/>
     </h:form>
 
-    <h:form>
+    <!--<h:form>
         <f:ajax render=":include">
             <h:commandButton value="view1" action="#{navBean.setView('view1')}" />
             <h:commandButton value="view2" action="#{navBean.setView('view2')}" />
@@ -42,7 +42,7 @@
 
     <h:panelGroup id="include">
         <ui:include src="views/#{navBean.view}.xhtml" />
-    </h:panelGroup>
+    </h:panelGroup>-->
         
     </h:body>
-</html>
+</xhtml>

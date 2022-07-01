@@ -34,4 +34,9 @@
         <servlet-name>FacesServlet</servlet-name>
         <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
+    
+    <error-page>
+        <exception-type>test.jsf.CustomException</exception-type>
+        <location>/WEB-INF/errorpages/error.xhtml</location>
+    </error-page>
 </web-app>

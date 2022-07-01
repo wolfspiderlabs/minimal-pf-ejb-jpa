@@ -1,12 +1,12 @@
 package test.jsf;
 
+import java.util.Iterator;
 import javax.faces.FacesException;
 import javax.faces.application.ViewHandler;
 import javax.faces.context.ExceptionHandler;
 import javax.faces.context.ExceptionHandlerWrapper;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ExceptionQueuedEvent;
-import static org.primefaces.component.contextmenu.ContextMenuBase.PropertyKeys.event;
 
 /**
  *
@@ -28,17 +28,37 @@ public class CustomExceptionHandler extends ExceptionHandlerWrapper {
     public void handle() throws FacesException {
         Iterable<ExceptionQueuedEvent> events = getUnhandledExceptionQueuedEvents();
         
-        for (ExceptionQueuedEvent event: events) {
+        Iterator<ExceptionQueuedEvent> i = events.iterator();
+        
+        while (i.hasNext()) {
+            ExceptionQueuedEvent event = i.next();
+        
+        //for (ExceptionQueuedEvent event: events) {
             FacesContext context = FacesContext.getCurrentInstance();
             
             if (context.getPartialViewContext().isAjaxRequest()) {
-                            System.out.println("HERHER");
-
-                String viewId = "/error.xhtml";
+                String viewId = "error.xhtml";
                 ViewHandler viewHandler = context.getApplication().getViewHandler();
                 context.setViewRoot(viewHandler.createView(context, viewId));
                 context.getPartialViewContext().setRenderAll(true);
                 context.renderResponse();
+                
+                 /*try {
+                    System.out.println("HERHER");
+
+                    UIViewRoot viewRoot = context.getViewRoot();
+                    ViewHandler viewHandler = context.getApplication().getViewHandler();                
+                    ViewDeclarationLanguage vdl = viewHandler.getViewDeclarationLanguage(context, viewId);
+                    vdl.buildView(context, viewRoot);
+                    context.getApplication().publishEvent(context, PreRenderViewEvent.class, viewRoot);
+                    vdl.renderView(context, viewRoot);
+                    context.responseComplete();
+                } catch (IOException e) {
+                    System.out.println("IOException!!!");
+                }*/
+                    
+                i.remove();
+                getWrapped().handle();
                 return;
             } else {
                 //context.getExternalContext().redirect("/error.xhtml");

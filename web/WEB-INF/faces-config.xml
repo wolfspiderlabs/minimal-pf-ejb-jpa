@@ -6,8 +6,6 @@
     version="2.3">
     
     <factory>
-        <exception-handler-factory>
-            test.jsf.CustomExceptionHandlerFactory
-        </exception-handler-factory>
+        <exception-handler-factory>org.omnifaces.exceptionhandler.FullAjaxExceptionHandlerFactory</exception-handler-factory>
     </factory>
 </faces-config>

@@ -48,7 +48,7 @@ public class TestBean implements Serializable {
         return "/";
     }
     
-    public void error() throws Exception
+    public void error() throws CustomException
     {
         testEJB.error();
     }

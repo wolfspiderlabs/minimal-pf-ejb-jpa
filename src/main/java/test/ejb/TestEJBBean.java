@@ -5,6 +5,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import test.jpa.TestEntity;
+import test.jsf.CustomException;
 
 @Stateless
 public class TestEJBBean implements TestEJB {
@@ -29,8 +30,8 @@ public class TestEJBBean implements TestEJB {
     }
     
     @Override
-    public void error() throws Exception
+    public void error() throws CustomException
     {
-        throw new Exception("test");
+        throw new CustomException();
     }
 }
