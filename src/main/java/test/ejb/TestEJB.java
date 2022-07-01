@@ -5,4 +5,5 @@ import test.jpa.*;
 public interface TestEJB {
     public void save(TestEntity obj);
     public TestEntity read();
+    public void error() throws Exception;
 }

@@ -27,4 +27,10 @@ public class TestEJBBean implements TestEJB {
         em.close();*/
         return test;
     }
+    
+    @Override
+    public void error() throws Exception
+    {
+        throw new Exception("test");
+    }
 }

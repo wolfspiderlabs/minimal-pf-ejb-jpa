@@ -47,4 +47,9 @@ public class TestBean implements Serializable {
         
         return "/";
     }
+    
+    public void error() throws Exception
+    {
+        testEJB.error();
+    }
 }

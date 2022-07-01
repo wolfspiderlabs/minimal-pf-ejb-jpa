@@ -27,7 +27,11 @@
             </div>
             </div>
         </div>
-        
+    
+    <h:form>
+        <p:commandButton value="Error" action="#{testBean.error}"/>
+    </h:form>
+
     <h:form>
         <f:ajax render=":include">
             <h:commandButton value="view1" action="#{navBean.setView('view1')}" />
