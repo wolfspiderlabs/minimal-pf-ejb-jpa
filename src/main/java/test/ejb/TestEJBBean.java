@@ -32,6 +32,7 @@ public class TestEJBBean implements TestEJB {
     @Override
     public void error() throws CustomException
     {
+        System.out.println("THROWING");
         throw new CustomException();
     }
 }

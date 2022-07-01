@@ -7,8 +7,7 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-       <h:outputStylesheet library="css" name="/layout.css" />
-       
+        <h:outputStylesheet library="css" name="/layout.css" />-->
     </h:head>
     <h:body>
         <div class="layout-content">
@@ -29,10 +28,12 @@
         </div>
     
     <h:form>
-        <p:commandButton value="Error" action="#{testBean.error}"/>
+        <p:commandButton value="Error" action="#{exceptionBean.error}"/>
     </h:form>
 
-    <!--<h:form>
+    <ui:insert name="content"/>
+        
+    <h:form>
         <f:ajax render=":include">
             <h:commandButton value="view1" action="#{navBean.setView('view1')}" />
             <h:commandButton value="view2" action="#{navBean.setView('view2')}" />
