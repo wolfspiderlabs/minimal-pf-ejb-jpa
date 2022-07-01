@@ -30,9 +30,7 @@
     <h:form>
         <p:commandButton value="Error" action="#{exceptionBean.error}"/>
     </h:form>
-
-    <ui:insert name="content"/>
-        
+       
     <h:form>
         <f:ajax render=":include">
             <h:commandButton value="view1" action="#{navBean.setView('view1')}" />
@@ -41,9 +39,13 @@
         </f:ajax>
     </h:form>
 
+    <ui:insert name="content">
+ 
     <h:panelGroup id="include">
         <ui:include src="views/#{navBean.view}.xhtml" />
-    </h:panelGroup>-->
+    </h:panelGroup>
+    
+    </ui:insert>
         
     </h:body>
 </xhtml>
