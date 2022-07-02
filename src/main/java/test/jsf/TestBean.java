@@ -3,16 +3,17 @@ package test.jsf;
 import java.io.Serializable;
 
 import javax.ejb.EJB;
-import javax.faces.view.ViewScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.validation.constraints.NotNull;
 
 import test.ejb.TestEJB;
-import test.ejb.TestException;
 import test.jpa.TestEntity;
 
 @Named
-@ViewScoped
+//@ViewScoped
+@RequestScoped
 public class TestBean implements Serializable {
     private static final long serialVersionUID = 4874297007974595139L;
     
@@ -22,6 +23,7 @@ public class TestBean implements Serializable {
     @Inject
     SessionBean sessionBean;
     
+    @NotNull
     private String text;
 
     public TestBean() {
