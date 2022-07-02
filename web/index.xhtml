@@ -21,10 +21,11 @@
             <div class="card">
                 <h:form id="form">
                     <h5 class="p-mt-0">Basic</h5>
-                    <h:panelGrid columns="2" cellpadding="5">
+                    <h:panelGrid columns="3" cellpadding="5">
                         <h:outputText rendered="#{flash['org.omnifaces.view_expired'] eq true}" value="Session Expired"/>
                         <p:outputLabel for="name" value="Name"/>
-                        <p:inputText id="name" value="#{testBean.text}" required="true"/>
+                        <!--<p:inputText id="name" value="#{testBean.text}" required="true"/>-->
+                        <p:inputText id="name" value="#{testBean.text}"/>
                         <p:message for="name"/>
                         
                         <h:outputText id="display" value="#{testBean.text}"/>

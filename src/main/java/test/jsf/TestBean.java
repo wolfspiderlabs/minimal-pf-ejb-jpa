@@ -6,7 +6,7 @@ import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
 
 import test.ejb.TestEJB;
 import test.jpa.TestEntity;
@@ -23,13 +23,13 @@ public class TestBean implements Serializable {
     @Inject
     SessionBean sessionBean;
     
-    @NotNull
+    @NotBlank
     private String text;
 
     public TestBean() {
         
     }
-    
+
     public String getText() {
         return text;
     }
