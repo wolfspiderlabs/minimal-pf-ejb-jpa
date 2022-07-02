@@ -7,6 +7,7 @@ package test.ejb;
 import javax.inject.Inject;
 import javax.interceptor.AroundInvoke;
 import javax.interceptor.InvocationContext;
+import test.jsf.CustomException;
 import test.jsf.SessionBean;
 
 /**
@@ -20,7 +21,8 @@ public class CustomInterceptor {
     @AroundInvoke
     public Object intercept(InvocationContext ctx) throws Exception {
         if (sessionBean.getUserId() == null) {
-            throw new TestException("Null ID");
+            //throw new TestException("Null ID");
+            throw new CustomException("Null ID");
         } else {
             return ctx.proceed();
         }

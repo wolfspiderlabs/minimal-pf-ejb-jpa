@@ -9,4 +9,11 @@
         <exception-handler-factory>org.omnifaces.exceptionhandler.FullAjaxExceptionHandlerFactory</exception-handler-factory>
         <exception-handler-factory>org.omnifaces.exceptionhandler.ViewExpiredExceptionHandlerFactory</exception-handler-factory>
     </factory>
+    
+    <application>
+        <resource-bundle>
+             <base-name>test.i18n.messages</base-name>
+             <var>msg</var>
+        </resource-bundle>
+    </application>    
 </faces-config>

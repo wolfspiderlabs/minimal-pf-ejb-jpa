@@ -40,8 +40,13 @@
         <location>/WEB-INF/errorpages/error.xhtml</location>
     </error-page>
     
-    <error-page>
+    <!--<error-page>
         <exception-type>javax.ejb.EJBException</exception-type>
         <location>/WEB-INF/errorpages/error.xhtml</location>
-    </error-page>    
+    </error-page>  -->
+    
+    <error-page>
+        <exception-type>test.jsf.CustomException</exception-type>
+        <location>/WEB-INF/errorpages/error.xhtml</location>
+    </error-page>        
 </web-app>
