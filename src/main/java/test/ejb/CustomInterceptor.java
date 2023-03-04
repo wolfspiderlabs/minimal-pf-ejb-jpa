@@ -4,9 +4,9 @@
  */
 package test.ejb;
 
-import javax.inject.Inject;
-import javax.interceptor.AroundInvoke;
-import javax.interceptor.InvocationContext;
+import jakarta.inject.Inject;
+import jakarta.interceptor.AroundInvoke;
+import jakarta.interceptor.InvocationContext;
 import test.jsf.CustomException;
 import test.jsf.SessionBean;
 
@@ -17,7 +17,7 @@ import test.jsf.SessionBean;
 public class CustomInterceptor {
     @Inject
     SessionBean sessionBean;
-    
+
     @AroundInvoke
     public Object intercept(InvocationContext ctx) throws Exception {
         if (sessionBean.getUserId() == null) {

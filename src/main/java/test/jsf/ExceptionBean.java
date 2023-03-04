@@ -5,8 +5,8 @@
 package test.jsf;
 
 import java.io.Serializable;
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Named;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Named;
 
 /**
  *
@@ -16,7 +16,7 @@ import javax.inject.Named;
 @RequestScoped
 public class ExceptionBean implements Serializable {
     private static final long serialVersionUID = 1L;
-    
+
     public void error() throws CustomException
     {
         throw new CustomException();

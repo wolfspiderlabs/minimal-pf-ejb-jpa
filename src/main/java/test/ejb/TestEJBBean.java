@@ -1,9 +1,9 @@
 package test.ejb;
 
-import javax.ejb.Stateless;
-import javax.interceptor.Interceptors;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import jakarta.ejb.Stateless;
+import jakarta.interceptor.Interceptors;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 
 import test.jpa.TestEntity;
 import test.jsf.CustomException;
@@ -29,18 +29,18 @@ public class TestEJBBean implements TestEJB {
         em.close();*/
         return test;
     }
-    
+
     @Override
     public void error() throws CustomException {
         System.out.println("THROWING");
         throw new CustomException();
     }
-    
+
     @Override
     @Interceptors(CustomInterceptor.class)
 //    public void intercept() throws TestException {
     public void intercept() throws CustomException {
-        
+
 
     }
 }
